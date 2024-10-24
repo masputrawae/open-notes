@@ -1,0 +1,63 @@
+# obsidian notes
+.obsidian
+.trash
+# Bundler dependencies
+vendor
+bundle
+Gemfile.lock
+
+# Jekyll output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Temp files
+*.tmp
+*.log
+
+# System generated files
+.DS_Store
+Thumbs.db
+
+# SASS cache
+.sass-cache
+
+# Node modules (if using Node.js)
+node_modules/
+
+# Gitignore files for Jekyll
+.jekyll-cache/
+.sass-cache/
+
+# Editor files
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Docker files
+docker-compose.override.yml
+.env
+
+# Package manager files
+.yarn/
+.pnp/
+.pnp.js
+yarn-error.log
+.pnpm-debug.log
+
+# GitHub Actions
+.github/
+
+# Netlify or Vercel configurations
+netlify.toml
+vercel.json
+
+# Backup files
+*~
+*.swp
+.bak
+
+# Webpack or other build system outputs
+dist/
+build/
