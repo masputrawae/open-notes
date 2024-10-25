@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (Header) -->
+        <header class="sidebar">
+            <h1>{{ site.title }}</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/about' | relative_url }}">About</a></li>
+                    <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
+                    <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+            <article>
+                <header>
+                    <h2>{{ page.title }}</h2>
+                    <p><small>Published on {{ page.date | date: "%B %d, %Y" }}</small></p
+             
+                </header>
+                <section>
+                    <p>{{ content }}</p>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <!-- Optional Footer -->
+    <footer>
+        <p>&copy; {{ site.title }} {{ "now" | date: "%Y" }}</p>
+        <nav>
+            <ul>
+                <li><a href="{{ '/privacy' | relative_url }}">Privacy Policy</a></li>
+                <li><a href="{{ '/terms' | relative_url }}">Terms of Service</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout for header, content, and sidebar */
+body {
+  display: flex;
+  height: 100vh;
+}
+
+/* Header styling - on the left */
+#header {
+  background-color: #333;
+  color: white;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Main content styling - center */
+#content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Sidebar styling - on the right */
+#sidebar {
+  background-color: #444;
+  color: white;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Button styling */
+button {
+  margin-bottom: 20px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #666;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #888;
+}
