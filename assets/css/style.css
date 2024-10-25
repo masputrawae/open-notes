@@ -1,114 +1,494 @@
 /* style.css */
 
-/* Reset default margin dan padding untuk semua elemen */
-* {
+/* Reset default margin dan padding */
+body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Gaya untuk body */
+/* Gaya umum */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Warna latar belakang yang lebih lembut */
-    color: #333;
+    font-size: 14px; /* Ukuran font kecil */
+    color: #000000;
+    background-color: #f9f9f9; /* Warna latar belakang yang lembut */
 }
 
-/* Gaya untuk container utama */
+/* Kontainer utama */
 .container {
     display: flex;
-    min-height: 100vh;
-    padding: 20px; /* Menambahkan padding pada container */
+    max-width: 1400px; /* Lebar maksimum konten */
+    margin: 0; /* Menghilangkan margin agar sidebar nempel di kiri */
 }
 
-/* Gaya untuk footer */
-.footer {
-    text-align: center;
-    padding: 15px 0;
-    background-color: #4A4A4A;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto; /* Membuat footer tetap di bagian bawah */
-    font-size: 0.8em; /* Ukuran font footer diperkecil */
-}
-
-/* Gaya untuk judul dan subtitle situs */
-.site-header h1 {
-    font-size: 1.6em; /* Ukuran font disempurnakan */
-    margin-bottom: 5px; /* Mengurangi jarak */
-    color: #222;
-}
-
-.site-header h2 {
-    font-size: 0.9em; /* Ukuran font diperkecil */
-    color: #666;
-}
-
-/* Gaya untuk logo */
-.logo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Gaya untuk navigasi utama */
+/* Sidebar/menu utama */
 .main-menu {
-    width: 250px;
-    background-color: #ffffff;
+    width: 200px; /* Lebar sidebar */
+    background-color: #fff; /* Warna latar belakang menu */
+    border-right: 1px solid #ddd; /* Garis batas kanan sidebar */
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
+    position: fixed; /* Menjaga sidebar tetap di posisi kiri */
+    height: 100vh; /* Mengatur tinggi sidebar agar memenuhi layar */
 }
 
-.main-menu:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+/* Logo */
+.logo {
+    display: flex;
+    justify-content: center; /* Memusatkan logo */
+    align-items: center; /* Memusatkan logo secara vertikal */
+    width: 60px; /* Diameter lingkaran */
+    height: 60px; /* Diameter lingkaran */
+    border-radius: 50%; /* Membuat lingkaran */
+    overflow: hidden; /* Memotong gambar jika lebih besar dari lingkaran */
+    margin-bottom: 20px; /* Jarak bawah dari logo */
 }
 
-.main-menu h3 {
-    margin: 15px 0; /* Mengurangi jarak */
-    font-size: 1.2em; /* Diperkecil */
-    color: #333;
+.logo img {
+    width: 100%; /* Memastikan gambar mengisi lingkaran */
+    height: auto;
 }
 
-.main-menu ul {
-    list-style: none;
+/* Header situs */
+.site-header h1 {
+    font-size: 18px; /* Ukuran font untuk judul situs */
+    margin-bottom: 20px;
+}
+
+/* Menu navigasi */
+nav ul {
+    list-style: none; /* Menghapus bullet */
     padding-left: 0;
 }
 
-.main-menu ul li {
-    margin: 8px 0; /* Diperkecil */
+nav ul li {
+    margin: 10px 0; /* Jarak antar item menu */
 }
 
-.main-menu ul li a {
+nav ul li a {
     text-decoration: none;
-    color: #4A4A4A;
-    padding: 10px; /* Ditambahkan padding agar lebih nyaman */
-    display: block;
+    color: #007bff; /* Warna link */
+    display: flex;
+    align-items: center; /* Memusatkan icon dan teks */
+}
+
+nav ul li a i {
+    margin-right: 10px; /* Jarak antara icon dan teks */
+}
+
+/* Konten utama */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff; /* Warna latar belakang konten */
+    margin-left: 220px; /* Memberikan ruang untuk sidebar */
+    position: relative; /* Posisi relatif untuk menempatkan search bar */
+    border-left: 1px solid #000000; /* Garis batas kiri konten utama */
+}
+
+/* Search bar */
+.search-bar {
+    position: absolute; /* Memungkinkan penempatan di pojok kanan atas */
+    top: 20px; /* Jarak dari atas */
+    right: 30px; /* Geser ke kanan sedikit */
+}
+
+.search-bar input[type="text"] {
+    padding: 5px; /* Padding lebih kecil */
+    width: 150px; /* Lebar lebih kecil */
+    border: 1px solid #000000;
     border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-.main-menu ul li a:hover {
-    background-color: #E8E8E8;
-    color: #000;
+.search-bar button {
+    padding: 5px 10px; /* Padding lebih kecil */
+    background-color: #007bff; /* Warna tombol */
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
-/* Gaya untuk tombol toggle sidebar */
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    margin-top: 20px; /* Jarak di atas footer */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .main-menu {
+        display: none; /* Sembunyikan sidebar pada tampilan mobile */
+    }
+
+    .toggle-button {
+        display: block; /* Tampilkan tombol toggle pada tampilan mobile */
+    }
+
+    .content {
+        padding: 10px; /* Mengurangi padding pada konten mobile */
+    }
+
+    .search-bar {
+        position: relative; /* Mengatur ulang posisi search bar pada tampilan mobile */
+        top: auto;
+        right: auto;
+        margin: 10px 0; /* Margin untuk tampilan mobile */
+    }
+}
+
+/* Gaya untuk tombol toggle */
 .toggle-button {
-    display: none;
+    display: none; /* Sembunyikan tombol pada tampilan desktop */
     background: none;
     border: none;
-    font-size: 1.4em; /* Diperkecil */
+    font-size: 24px; /* Ukuran ikon */
     cursor: pointer;
-    margin: 10px 0; /* Mengurangi margin */
-    color: #4A4A4A;
-    transition: color 0.3s;
+    padding: 10px; /* Ruang sekitar tombol */
 }
 
-.toggle-button:hover {
-    color: #333; /* Mengubah warna saat hover */
+/* Menambahkan gaya untuk hover pada link */
+nav ul li a:hover {
+    background-color: #f0f0f0; /* Warna latar belakang saat hover */
+    border-radius: 4px; /* Sudut membulat */
+}
+
+
+/* Menambahkan gaya untuk page-section */
+.page-section {
+    margin-top: 20px; /* Jarak atas dari elemen lain */
+    padding: 30px; /* Padding untuk seluruh section */
+    background-color: #ffffff; /* Warna latar belakang section */
+    border-radius: 8px; /* Sudut membulat untuk section */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Bayangan lebih dramatis */
+}
+
+/* Gaya untuk judul halaman */
+.page-section h1 {
+    font-size: 28px; /* Ukuran font judul halaman */
+    color: #333333; /* Warna judul lebih gelap untuk kontras yang lebih baik */
+    margin-bottom: 20px; /* Jarak bawah judul */
+    border-bottom: 3px solid #007bff; /* Garis bawah judul */
+    padding-bottom: 10px; /* Ruang di bawah judul */
+    font-family: 'Arial Black', sans-serif; /* Font yang lebih tebal untuk judul */
+}
+
+/* Gaya untuk konten halaman */
+.page-content {
+    padding: 20px; /* Padding untuk konten */
+    border: 1px solid #e0e0e0; /* Batas konten yang lebih halus */
+    border-radius: 4px; /* Sudut membulat */
+    background-color: #fefefe; /* Warna latar belakang konten */
+    margin-top: 15px; /* Jarak atas konten dari judul */
+    line-height: 1.6; /* Tinggi baris untuk kenyamanan membaca */
+}
+
+/* Gaya untuk paragraf */
+.page-content p {
+    margin-bottom: 15px; /* Jarak antar paragraf */
+    color: #555555; /* Warna teks paragraf */
+}
+
+/* Gaya untuk daftar */
+.page-content ul {
+    list-style-type: disc; /* Menggunakan bullet point untuk daftar */
+    margin-left: 25px; /* Jarak dari margin kiri */
+}
+
+/* Gaya untuk link */
+.page-content a {
+    color: #007bff; /* Warna link */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s ease; /* Transisi halus untuk hover */
+}
+
+/* Gaya saat hover pada link */
+.page-content a:hover {
+    color: #0056b3; /* Warna saat hover */
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Gaya untuk tombol */
+.button {
+    display: inline-block;
+    padding: 10px 15px; /* Ruang di dalam tombol */
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    border-radius: 4px; /* Sudut membulat */
+    transition: background-color 0.3s ease; /* Transisi halus untuk hover */
+    margin-top: 10px; /* Jarak atas tombol */
+}
+
+/* Gaya saat hover pada tombol */
+.button:hover {
+    background-color: #0056b3; /* Warna saat hover tombol */
+}
+
+
+
+
+
+
+
+
+/* Gaya untuk artikel */
+.post {
+    margin: 20px 0; /* Jarak atas dan bawah untuk artikel */
+    padding: 20px; /* Padding untuk artikel */
+    background-color: #ffffff; /* Warna latar belakang artikel */
+    border-radius: 8px; /* Sudut membulat untuk artikel */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan untuk kedalaman */
+}
+
+/* Gaya untuk header artikel */
+.post-header {
+    margin-bottom: 20px; /* Jarak bawah untuk header */
+}
+
+/* Gaya untuk judul artikel */
+.post-header h1 {
+    font-size: 26px; /* Ukuran font judul */
+    color: #333333; /* Warna teks judul */
+    margin-bottom: 10px; /* Jarak bawah judul */
+}
+
+/* Gaya untuk meta informasi (tanggal) */
+.post-meta {
+    font-size: 14px; /* Ukuran font untuk meta */
+    color: #777777; /* Warna teks lebih terang untuk kontras */
+}
+
+/* Gaya untuk bagian komentar */
+.comments {
+    margin-top: 30px; /* Jarak atas untuk bagian komentar */
+    padding: 20px; /* Padding untuk komentar */
+    background-color: #f7f7f7; /* Warna latar belakang bagian komentar */
+    border-radius: 8px; /* Sudut membulat untuk komentar */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Bayangan untuk komentar */
+}
+
+/* Gaya untuk judul bagian komentar */
+.comments h2 {
+    font-size: 22px; /* Ukuran font untuk judul komentar */
+    color: #333333; /* Warna teks untuk judul komentar */
+    margin-bottom: 15px; /* Jarak bawah judul komentar */
+}
+
+/* Gaya untuk mengatur tampilan Disqus */
+#disqus_thread {
+    margin-top: 15px; /* Jarak atas untuk thread Disqus */
+}
+
+/* Gaya untuk tampilan responsif */
+@media (max-width: 768px) {
+    .post {
+        padding: 15px; /* Mengurangi padding pada tampilan mobile */
+    }
+
+    .comments {
+        padding: 15px; /* Mengurangi padding pada bagian komentar di mobile */
+    }
+}
+
+
+
+/* Gaya umum untuk konten markdown */
+.markdown-content {
+    font-size: 15px; /* Ukuran font untuk teks markdown */
+    color: #333333; /* Warna teks */
+    line-height: 1.8; /* Ketinggian baris untuk kenyamanan membaca */
+    margin-top: 15px;
+}
+
+/* Heading */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    font-weight: bold; /* Membuat heading lebih tebal */
+    margin-top: 1.5em; /* Jarak atas untuk heading */
+    margin-bottom: 0.5em; /* Jarak bawah untuk heading */
+    line-height: 1.4; /* Ketinggian baris heading */
+    color: #222222; /* Warna heading */
+}
+
+/* Ukuran font untuk heading */
+.markdown-content h1 { font-size: 28px; }
+.markdown-content h2 { font-size: 24px; }
+.markdown-content h3 { font-size: 20px; }
+.markdown-content h4 { font-size: 18px; }
+.markdown-content h5 { font-size: 16px; }
+.markdown-content h6 { font-size: 14px; }
+
+/* Gaya untuk paragraf */
+.markdown-content p {
+    margin-bottom: 1em; /* Jarak antar paragraf */
+}
+
+/* Penekanan teks */
+.markdown-content em { font-style: italic; } /* Gaya italic untuk <em> */
+.markdown-content strong { font-weight: bold; } /* Gaya tebal untuk <strong> */
+
+/* Link */
+.markdown-content a {
+    color: #007bff; /* Warna link */
+    text-decoration: none;
+    border-bottom: 1px dotted #007bff; /* Garis bawah putus-putus */
+    transition: color 0.3s ease;
+}
+
+.markdown-content a:hover {
+    color: #0056b3; /* Warna link saat hover */
+}
+
+/* Gaya untuk list (daftar) */
+.markdown-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 15px;
+}
+
+.markdown-content ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    padding-left: 15px;
+}
+
+.markdown-content ul ul, .markdown-content ol ol {
+    margin-left: 15px; /* Sub-list indentasi */
+}
+
+/* Gaya untuk blockquote */
+.markdown-content blockquote {
+    border-left: 4px solid #007bff;
+    color: #555555;
+    padding-left: 15px;
+    margin: 1em 0;
+    font-style: italic;
+    background-color: #f9f9f9; /* Latar belakang untuk quote */
+}
+
+/* Gaya untuk kode inline */
+.markdown-content code {
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #d6336c;
+    border-radius: 4px;
+}
+
+/* Gaya untuk block kode */
+.markdown-content pre {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    overflow-x: auto; /* Menangani baris kode yang panjang */
+    font-size: 14px;
+}
+
+.markdown-content pre code {
+    color: #333333; /* Warna teks kode di dalam <pre> */
+}
+
+/* Gaya untuk tabel */
+.markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.markdown-content th,
+.markdown-content td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.markdown-content th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.markdown-content td {
+    background-color: #ffffff;
+}
+
+/* Gaya untuk gambar */
+.markdown-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Gaya untuk horizontal rule */
+.markdown-content hr {
+    border: none;
+    height: 1px;
+    background-color: #dddddd;
+    margin: 20px 0;
+}
+
+
+
+
+
+
+/* Container umum untuk teks pengantar arsip */
+.archive-intro {
+    font-size: 16px; /* Ukuran font yang nyaman dibaca */
+    color: #444444; /* Warna teks */
+    margin-bottom: 20px; /* Jarak bawah dari teks pengantar */
+    line-height: 1.6;
+}
+
+/* Gaya untuk judul bagian arsip */
+.archive-list-section h2 {
+    font-size: 22px;
+    color: #333333;
+    border-bottom: 2px solid #ddd; /* Garis bawah untuk pemisah */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Gaya untuk daftar arsip */
+.archive-list {
+    list-style-type: none; /* Menghapus bullet */
+    padding: 0;
+    margin: 0;
+}
+
+/* Setiap item arsip */
+.archive-item {
+    display: flex;
+    align-items: center; /* Pusatkan vertikal */
+    margin-bottom: 10px;
+}
+
+/* Gaya tanggal arsip */
+.archive-date {
+    font-weight: bold;
+    color: #666666;
+    margin-right: 10px; /* Jarak antara tanggal dan judul posting */
+    white-space: nowrap; /* Mencegah tanggal terputus */
+}
+
+/* Gaya untuk link arsip */
+.archive-link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.archive-link:hover {
+    color: #0056b3; /* Warna link saat hover */
+    text-decoration: underline; /* Menambah underline saat hover */
 }

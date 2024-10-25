@@ -19,7 +19,7 @@ permalink: /articles/
   {% endfor %}
 </div>
 
-<!-- Opsional: Tambahkan tautan untuk melihat lebih banyak artikel -->
+<!-- Tambahkan tautan untuk melihat lebih banyak artikel -->
 <div class="more-articles">
   <a href="{{ site.baseurl }}/archives/" class="view-more">Lihat Semua Artikel</a>
 </div>

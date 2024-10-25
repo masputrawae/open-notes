@@ -1,20 +1,17 @@
+<!-- Untuk default.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <!-- Metadata dasar untuk pengaturan karakter dan responsivitas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Judul halaman, menggabungkan judul halaman dengan judul situs -->
   <title>{{ page.title }} - {{ site.title }}</title>
   
-  <!-- Menambahkan favicon dan ikon untuk tab browser -->
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | relative_url }}">
   <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | relative_url }}">
   
-  <!-- Menghubungkan stylesheet utama -->
   <link rel="stylesheet" href="{{ '/assets/css/responsive.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}">
@@ -22,26 +19,17 @@
 </head>
 <body>
   <div class="container">
-    <!-- Sidebar navigasi utama yang memanjang dari atas hingga bawah -->
     <aside class="main-menu">
-      <!-- Bagian header yang menampilkan judul situs dan subtitle -->
-      <header class="site-header">
-        <h1>{{ site.title }}</h1> <!-- Judul situs -->
-        <h2>Welcome to my blog</h2> <!-- Subtitle -->
-      </header>
-      
-      <!-- Logo situs yang dapat diklik untuk kembali ke halaman utama -->
       <div class="logo">
         <a href="{{ '/' | relative_url }}">
           <img src="{{ '/assets/images/logo.jpeg' | relative_url }}" alt="Logo dari {{ site.title }}">
         </a>
       </div>
-      
-      <!-- Menu navigasi utama -->
+      <header class="site-header">
+      </header>
       <h3>Main Menu</h3>
       <nav aria-label="Main navigation">
         <ul>
-          <!-- Daftar tautan navigasi -->
           <li><a href="{{ '/' | relative_url }}"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="{{ '/articles/' | relative_url }}"><i class="fas fa-file-alt"></i> Articles</a></li>
           <li><a href="{{ '/categories/' | relative_url }}"><i class="fas fa-th-list"></i> Categories</a></li>
@@ -58,13 +46,11 @@
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Konten utama yang menampilkan halaman atau postingan -->
     <main class="content">
-      <!-- Search bar untuk mencari konten di situs -->
       <div class="search-bar">
         <form action="{{ '/search.html' | relative_url }}" method="get">
           <label for="search-box">Search</label>
-          <input type="text" id="search-box" name="query" required> <!-- Menambahkan atribut required untuk input pencarian -->
+          <input type="text" id="search-box" name="query" required>
           <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
         </form>
       </div>
@@ -73,12 +59,10 @@
     </main>
   </div>
 
-  <!-- Bagian footer yang menampilkan informasi hak cipta -->
   <footer class="footer">
     <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
   </footer>
   
-  <!-- Menghubungkan file JavaScript -->
   <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>

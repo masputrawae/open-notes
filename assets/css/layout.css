@@ -1,55 +1,161 @@
-/* layout.css */
+/* Kontainer pengantar artikel */
+.articles-intro {
+    font-size: 16px;
+    color: #444444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
 
-/* Gaya untuk konten utama */
-.content {
-    flex: 1;
-    padding: 20px; /* Diperkecil */
+/* Kontainer untuk kartu artikel */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout responsif dengan grid */
+    gap: 20px; /* Jarak antar kartu */
+    margin-top: 20px;
+}
+
+/* Kartu artikel */
+.card {
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
     border-radius: 8px;
-    transition: background-color 0.3s; /* Menambahkan transisi */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan ringan */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content:hover {
-    background-color: #f9f9f9; /* Menambahkan efek hover */
+.card:hover {
+    transform: translateY(-5px); /* Efek angkat saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Gaya untuk search bar */
-.search-bar {
-    margin-bottom: 15px; /* Diperkecil */
-    display: flex;
+/* Judul kartu */
+.card-title {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: #333333;
+    line-height: 1.4;
 }
 
-.search-bar form {
-    flex: 1;
+/* Tanggal posting */
+.post-date {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 10px;
 }
 
-.search-bar input[type="text"] {
-    flex: 1;
-    padding: 10px; /* Diperkecil */
-    border: 1px solid #ccc;
+/* Cuplikan artikel */
+.card-excerpt {
+    font-size: 15px;
+    color: #555555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Tombol Baca Selengkapnya */
+.read-more {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Tombol Lihat Semua Artikel */
+.more-articles {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.view-more {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 10px 20px;
     border-radius: 4px;
-    font-size: 0.9em; /* Diperkecil */
-    transition: border-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
-.search-bar input[type="text"]:focus {
-    border-color: #4A4A4A;
-    outline: none;
+.view-more:hover {
+    background-color: #0056b3;
 }
 
-.search-bar button {
-    padding: 10px 12px; /* Diperkecil */
-    border: none;
-    background-color: #4A4A4A;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 10px;
-    transition: background-color 0.3s, transform 0.2s;
+
+
+
+
+
+/* Pengantar kategori */
+.categories-intro {
+    font-size: 16px;
+    color: #444444;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
-.search-bar button:hover {
-    background-color: #333;
-    transform: scale(1.05); /* Efek kecil saat hover */
+/* Daftar kategori */
+.category-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.category-item {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan ringan */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px); /* Efek angkat saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Judul kategori */
+.category-title {
+    font-size: 20px;
+    margin: 0 0 15px;
+    color: #333333;
+}
+
+/* Daftar posting dalam kategori */
+.post-category-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.post-category-item {
+    margin-bottom: 10px;
+}
+
+.post-link {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Gaya untuk kategori tanpa postingan */
+.no-posts {
+    font-size: 14px;
+    color: #888888;
+    font-style: italic;
+    margin-top: 10px;
 }
