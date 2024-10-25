@@ -3,8 +3,8 @@
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
+    border-radius: 2px;
+    padding: 3px 8px;
     cursor: pointer;
     position: fixed; /* Membuat tombol tetap di layar */
     top: 1px; /* Jarak dari atas layar */
@@ -37,7 +37,7 @@
         background-color: #ffffff;
         padding: 20px;
         transition: left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 0 10px rgb(0, 0, 0);
         z-index: 1000;
     }
 
@@ -86,7 +86,7 @@
 }
 
 .site-header h1 {
-    font-size: 24px; /* Ukuran judul situs */
+    font-size: 20px; /* Ukuran judul situs */
     color: #343a40; /* Warna judul */
 }
 
@@ -158,10 +158,10 @@ nav ul li a:hover {
 }
 
 .search-bar input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ced4da; /* Border pencarian */
+    padding: 5px;
+    border: 1px solid #000000; /* Border pencarian */
     border-radius: 5px; /* Sudut melengkung */
-    width: 300px; /* Lebar input pencarian */
+    width: 150px; /* Lebar input pencarian */
     transition: border-color 0.3s, box-shadow 0.3s; /* Transisi halus untuk border dan bayangan */
 }
 
@@ -172,7 +172,7 @@ nav ul li a:hover {
 }
 
 .search-bar button {
-    padding: 10px 15px;
+    padding: 5px 10px;
     margin-left: 5px; /* Jarak antara input dan tombol */
     background-color: #007bff; /* Warna latar belakang tombol */
     color: white; /* Warna teks tombol */
@@ -186,11 +186,13 @@ nav ul li a:hover {
     background-color: #0056b3; /* Warna saat hover */
     transform: scale(1.05); /* Memperbesar tombol saat hover */
 }
-
+.page-title{
+    text-align: left;
+}
 /* Gaya untuk footer */
 .footer {
     text-align: center;
-    padding: 10px;
+    padding: 1px;
     background-color: #f8f9fa; /* Warna latar belakang footer */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Bayangan di atas footer */
     position: relative; /* Memungkinkan posisi relatif */
@@ -234,7 +236,7 @@ nav ul li a:hover {
 /* Gaya untuk bagian halaman utama */
 .page-section {
     padding: 30px; /* Padding lebih untuk ruang yang lebih nyaman */
-    background-color: #f9f9f9; /* Warna latar belakang yang lembut untuk bagian halaman */
+    background-color: #ffffff; /* Warna latar belakang yang lembut untuk bagian halaman */
     border-radius: 10px; /* Sudut melengkung yang lebih halus */
     box-shadow: 0 2px 10px rgb(0, 0, 0); /* Bayangan yang lebih dalam untuk efek kedalaman */
     margin-bottom: 30px; /* Jarak bawah yang lebih besar antara bagian */
@@ -289,7 +291,7 @@ nav ul li a:hover {
 
 /* Gaya untuk header artikel */
 .post-header {
-    margin-bottom: 20px; /* Jarak bawah antara header dan konten */
+    margin-bottom: 0px; /* Jarak bawah antara header dan konten */
 }
 
 /* Gaya untuk judul post */
@@ -320,7 +322,7 @@ nav ul li a:hover {
 .comments {
     margin-top: 40px; /* Jarak atas untuk bagian komentar */
     padding: 15px; /* Padding di sekitar bagian komentar */
-    background-color: #f9f9f9; /* Warna latar belakang untuk bagian komentar */
+    background-color: #ffffff; /* Warna latar belakang untuk bagian komentar */
     border-radius: 10px; /* Sudut melengkung pada bagian komentar */
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
 }
@@ -339,7 +341,7 @@ nav ul li a:hover {
 .homepage-intro {
     text-align: center; /* Pusatkan teks di bagian pengantar */
     padding: 40px; /* Ruang di sekitar pengantar */
-    background-color: #f9f9f9; /* Warna latar belakang lembut */
+    background-color: #ffffff; /* Warna latar belakang lembut */
     border-radius: 12px; /* Sudut melengkung */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih halus untuk efek kedalaman */
     margin-bottom: 30px; /* Jarak bawah untuk pemisahan */
@@ -891,3 +893,5 @@ nav ul li a:hover {
     color: #666; /* Warna teks abu-abu */
     margin-top: 5px; /* Jarak atas untuk memisahkan informasi tambahan dari tautan */
 }
+
+
