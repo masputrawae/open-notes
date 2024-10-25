@@ -1,0 +1,795 @@
+/*===============================[@] ============ [@]===============================*/
+/*===============================[@] Default.HTML [@]===============================*/
+/*===============================[@] Default.HTML [@]===============================*/
+/*===============================[@] ============ [@]===============================*/
+/* Reset beberapa gaya default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+/* Gaya untuk container utama */
+.container {
+    display: flex;
+    height: 100vh; /* Memastikan konten memenuhi tinggi viewport */
+    font-family: 'Arial', sans-serif; /* Menetapkan font default */
+    background-color: #eef2f3; /* Warna latar belakang yang lembut untuk keseluruhan halaman */
+}
+
+/* Gaya untuk sidebar navigasi */
+.main-menu {
+    background-color: #ffffff; /* Warna latar belakang sidebar yang lebih cerah */
+    width: 250px; /* Lebar sidebar */
+    padding: 20px;
+    overflow-y: auto; /* Memungkinkan scroll jika konten terlalu panjang */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek kedalaman */
+    border-right: 1px solid #ced4da; /* Garis batas di sisi kanan sidebar */
+}
+
+/* Gaya untuk header situs */
+.site-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.site-header h1 {
+    font-size: 24px; /* Ukuran judul situs */
+    color: #343a40; /* Warna judul */
+}
+
+.site-header h2 {
+    font-size: 16px; /* Ukuran subtitle */
+    color: #6c757d; /* Warna subtitle */
+}
+
+/* Gaya untuk logo */
+.logo {
+    display: flex;
+    justify-content: center; /* Pusatkan logo */
+    margin-bottom: 20px; /* Jarak di bawah logo */
+}
+
+.logo img {
+    width: 100px; /* Ukuran logo */
+    height: auto; /* Menjaga proporsi */
+    border-radius: 50%; /* Membuat logo berbentuk lingkaran */
+    border: 3px solid #007bff; /* Menambahkan border pada logo */
+    transition: transform 0.3s; /* Transisi halus saat hover */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Memperbesar logo saat hover */
+}
+
+/* Gaya untuk menu navigasi */
+nav ul {
+    list-style: none; /* Menghapus bullet dari daftar */
+    padding: 0; /* Menghapus padding */
+}
+
+nav ul li {
+    margin: 10px 0; /* Jarak antar item menu */
+}
+
+nav ul li a {
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    color: #007bff; /* Warna teks tautan */
+    font-weight: bold;
+    display: flex; /* Menjaga ikon dan teks sejajar */
+    align-items: center;
+    padding: 10px 15px; /* Padding untuk memperbesar area klik */
+    border-radius: 5px; /* Sudut melengkung */
+    transition: background-color 0.3s, color 0.3s; /* Transisi halus untuk hover */
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Warna latar belakang saat hover */
+    color: #0056b3; /* Warna teks saat hover */
+}
+
+/* Gaya untuk konten utama */
+.content {
+    flex: 1; /* Mengisi ruang yang tersisa di container */
+    padding: 20px;
+    background-color: #ffffff; /* Warna latar belakang konten */
+    overflow-y: auto; /* Memungkinkan scroll jika konten terlalu panjang */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk konten */
+    border-radius: 5px; /* Sudut melengkung pada konten */
+}
+
+/* Gaya untuk search bar */
+.search-bar {
+    display: flex;
+    justify-content: center; /* Pusatkan elemen */
+    margin-bottom: 20px; /* Jarak di bawah search bar */
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ced4da; /* Border pencarian */
+    border-radius: 5px; /* Sudut melengkung */
+    width: 300px; /* Lebar input pencarian */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transisi halus untuk border dan bayangan */
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #007bff; /* Warna border saat fokus */
+    outline: none; /* Menghapus outline default */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Menambahkan bayangan saat fokus */
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    margin-left: 5px; /* Jarak antara input dan tombol */
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghapus border tombol */
+    border-radius: 5px; /* Sudut melengkung pada tombol */
+    cursor: pointer; /* Menunjukkan kursor tangan saat hover */
+    transition: background-color 0.3s, transform 0.2s; /* Transisi halus untuk hover */
+}
+
+.search-bar button:hover {
+    background-color: #0056b3; /* Warna saat hover */
+    transform: scale(1.05); /* Memperbesar tombol saat hover */
+}
+
+/* Gaya untuk footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa; /* Warna latar belakang footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Bayangan di atas footer */
+    position: relative; /* Memungkinkan posisi relatif */
+}
+
+/* Gaya teks footer */
+.footer p {
+    color: #6c757d; /* Warna teks footer */
+    font-size: 14px; /* Ukuran font footer */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Mengubah tata letak menjadi kolom pada layar kecil */
+    }
+
+    .main-menu {
+        width: 100%; /* Lebar sidebar 100% pada layar kecil */
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%; /* Lebar input pencarian 100% */
+    }
+
+    .search-bar {
+        flex-direction: column; /* Mengubah tata letak menjadi kolom pada layar kecil */
+        align-items: center; /* Pusatkan elemen */
+    }
+
+    .search-bar button {
+        width: 100%; /* Tombol mengikuti lebar input pada layar kecil */
+        margin-left: 0; /* Menghapus margin saat dalam kolom */
+        margin-top: 5px; /* Jarak atas pada tombol */
+    }
+}
+/*===============================[@] ========= [@]===============================*/
+/*===============================[@] Page.HTML [@]===============================*/
+/*===============================[@] Page.HTML [@]===============================*/
+/*===============================[@] ========= [@]===============================*/
+/* Gaya untuk bagian halaman utama */
+.page-section {
+    padding: 30px; /* Padding lebih untuk ruang yang lebih nyaman */
+    background-color: #f9f9f9; /* Warna latar belakang yang lembut untuk bagian halaman */
+    border-radius: 10px; /* Sudut melengkung yang lebih halus */
+    box-shadow: 0 2px 10px rgb(0, 0, 0); /* Bayangan yang lebih dalam untuk efek kedalaman */
+    margin-bottom: 30px; /* Jarak bawah yang lebih besar antara bagian */
+}
+
+/* Gaya untuk judul halaman */
+.page-section h1 {
+    font-size: 32px; /* Ukuran font judul yang lebih besar */
+    color: #343a40; /* Warna teks judul */
+    margin-bottom: 20px; /* Jarak bawah untuk judul */
+    text-align: center; /* Pusatkan judul */
+    text-transform: uppercase; /* Mengubah semua huruf menjadi kapital */
+    letter-spacing: 1px; /* Spasi antar huruf untuk tampilan lebih modern */
+}
+
+/* Gaya untuk konten halaman */
+.page-content {
+    font-size: 18px; /* Ukuran font konten yang lebih besar untuk keterbacaan */
+    color: #495057; /* Warna teks konten */
+    line-height: 1.8; /* Jarak antar baris yang lebih lebar untuk kenyamanan baca */
+    margin: 0 auto; /* Pusatkan konten */
+    background-color: #ffffff; /* Warna latar belakang konten */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .page-section {
+        padding: 20px; /* Mengurangi padding pada layar kecil */
+    }
+
+    .page-section h1 {
+        font-size: 28px; /* Ukuran font judul yang lebih kecil pada layar kecil */
+    }
+
+    .page-content {
+        font-size: 16px; /* Ukuran font konten yang lebih kecil pada layar kecil */
+        padding: 15px; /* Mengurangi padding pada konten */
+    }
+}
+/*===============================[@] ========= [@]===============================*/
+/*===============================[@] Post.HTML [@]===============================*/
+/*===============================[@] Post.HTML [@]===============================*/
+/*===============================[@] ========= [@]===============================*/
+/* Gaya untuk artikel post */
+.post {
+    padding: 20px; /* Padding di sekitar artikel untuk ruang yang lebih nyaman */
+    background-color: #ffffff; /* Warna latar belakang untuk artikel */
+    border-radius: 10px; /* Sudut melengkung pada artikel */
+    box-shadow: 0 2px 5px rgb(0, 0, 0); /* Menambahkan bayangan untuk efek kedalaman */
+    margin-bottom: 30px; /* Jarak bawah antara artikel */
+}
+
+/* Gaya untuk header artikel */
+.post-header {
+    margin-bottom: 20px; /* Jarak bawah antara header dan konten */
+}
+
+/* Gaya untuk judul post */
+.post-header h1 {
+    font-size: 28px; /* Ukuran font judul post */
+    color: #343a40; /* Warna teks judul */
+    text-align: center; /* Pusatkan judul */
+    margin-bottom: 10px; /* Jarak bawah untuk judul */
+}
+
+/* Gaya untuk metadata post (tanggal) */
+.post-meta {
+    font-size: 14px; /* Ukuran font untuk metadata */
+    color: #6c757d; /* Warna teks untuk metadata */
+    text-align: center; /* Pusatkan metadata */
+    margin-top: 5px; /* Jarak atas untuk metadata */
+    margin-bottom: 15px; /* Jarak bawah untuk metadata */
+}
+
+/* Gaya untuk konten post */
+.post-content {
+    font-size: 16px; /* Ukuran font konten post */
+    color: #495057; /* Warna teks konten */
+    line-height: 1.6; /* Jarak antar baris untuk kenyamanan baca */
+}
+
+/* Gaya untuk bagian komentar */
+.comments {
+    margin-top: 40px; /* Jarak atas untuk bagian komentar */
+    padding: 15px; /* Padding di sekitar bagian komentar */
+    background-color: #f9f9f9; /* Warna latar belakang untuk bagian komentar */
+    border-radius: 10px; /* Sudut melengkung pada bagian komentar */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+}
+
+/* Gaya untuk judul komentar */
+.comments h2 {
+    font-size: 24px; /* Ukuran font judul komentar */
+    color: #343a40; /* Warna teks judul komentar */
+    margin-bottom: 15px; /* Jarak bawah untuk judul komentar */
+}
+/*===============================[@] ========== [@]===============================*/
+/*===============================[@] Index.HTML [@]===============================*/
+/*===============================[@] Index.HTML [@]===============================*/
+/*===============================[@] ========== [@]===============================*/
+/* Gaya untuk pengantar halaman utama */
+.homepage-intro {
+    text-align: center; /* Pusatkan teks di bagian pengantar */
+    padding: 40px; /* Ruang di sekitar pengantar */
+    background-color: #f9f9f9; /* Warna latar belakang lembut */
+    border-radius: 12px; /* Sudut melengkung */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih halus untuk efek kedalaman */
+    margin-bottom: 30px; /* Jarak bawah untuk pemisahan */
+}
+
+/* Gaya untuk judul pengantar */
+.intro-title {
+    font-size: 36px; /* Ukuran font untuk judul */
+    color: #343a40; /* Warna teks */
+    margin-bottom: 15px; /* Jarak bawah untuk judul */
+    font-weight: bold; /* Menebalkan judul */
+}
+
+/* Gaya untuk deskripsi pengantar */
+.intro-description {
+    font-size: 20px; /* Ukuran font untuk deskripsi */
+    color: #495057; /* Warna teks */
+    line-height: 1.8; /* Jarak antar baris */
+    margin: 0 auto; /* Pusatkan deskripsi */
+    max-width: 600px; /* Batas lebar untuk keterbacaan */
+}
+
+/* Gaya untuk bagian artikel terbaru */
+.recent-posts {
+    margin-top: 40px; /* Jarak atas untuk pemisahan dari pengantar */
+}
+
+/* Gaya untuk judul bagian */
+.section-title {
+    font-size: 30px; /* Ukuran font untuk judul bagian */
+    color: #343a40; /* Warna teks */
+    margin-bottom: 25px; /* Jarak bawah untuk judul */
+    text-align: center; /* Pusatkan judul */
+    border-bottom: 2px solid #007bff; /* Garis bawah pada judul */
+    padding-bottom: 10px; /* Ruang di bawah judul */
+}
+
+/* Gaya untuk daftar artikel */
+.article-list {
+    list-style-type: none; /* Menghapus titik pada daftar */
+    padding: 0; /* Menghapus padding default */
+}
+
+/* Gaya untuk setiap item artikel */
+.article-item {
+    padding: 15px; /* Padding di sekitar setiap item */
+    border-bottom: 1px solid #dee2e6; /* Garis pemisah di bawah setiap artikel */
+    margin-bottom: 15px; /* Jarak bawah antara item artikel */
+    background-color: #ffffff; /* Warna latar belakang artikel */
+    border-radius: 12px; /* Sudut melengkung */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Bayangan lebih halus untuk efek kedalaman */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi halus saat hover */
+}
+
+.article-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih gelap saat hover */
+    transform: scale(1.03); /* Memperbesar item saat hover */
+}
+
+/* Gaya untuk tautan artikel */
+.article-link {
+    font-size: 22px; /* Ukuran font untuk tautan artikel */
+    color: #007bff; /* Warna tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+    font-weight: bold; /* Menebalkan tautan */
+}
+
+/* Gaya untuk tautan artikel saat hover */
+.article-link:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Gaya untuk tanggal artikel */
+.article-date {
+    font-size: 14px; /* Ukuran font untuk tanggal */
+    color: #6c757d; /* Warna teks untuk tanggal */
+    margin-top: 5px; /* Jarak atas untuk tanggal */
+}
+
+/* Gaya untuk bagian tentang */
+.about-section {
+    margin-top: 40px; /* Jarak atas untuk pemisahan */
+}
+
+/* Gaya untuk deskripsi bagian tentang */
+.about-description {
+    font-size: 18px; /* Ukuran font untuk deskripsi tentang */
+    color: #495057; /* Warna teks */
+    line-height: 1.8; /* Jarak antar baris */
+    max-width: 700px; /* Batas lebar untuk keterbacaan */
+    margin: 0 auto; /* Pusatkan deskripsi */
+}
+
+/* Gaya untuk bagian pagination */
+.pagination {
+    text-align: center; /* Pusatkan konten */
+    padding: 2rem; /* Ruang di sekitar pagination */
+}
+
+/* Gaya untuk tautan pagination */
+.button {
+    padding: 10px 20px; /* Padding di sekitar tautan */
+    background-color: #007bff; /* Warna latar belakang */
+    color: #ffffff; /* Warna teks */
+    border: none; /* Menghapus border */
+    border-radius: 5px; /* Sudut melengkung pada tombol */
+    text-decoration: none; /* Menghapus garis bawah */
+    font-size: 16px; /* Ukuran font untuk tombol */
+    margin: 0 10px; /* Jarak horizontal antara tombol */
+    transition: background-color 0.3s, transform 0.2s; /* Efek transisi saat hover */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Warna saat hover */
+    transform: translateY(-2px); /* Efek sedikit naik saat hover */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .intro-title {
+        font-size: 30px; /* Ukuran font untuk judul pengantar pada layar kecil */
+    }
+    
+    .intro-description {
+        font-size: 18px; /* Ukuran font untuk deskripsi pengantar pada layar kecil */
+    }
+    
+    .section-title {
+        font-size: 26px; /* Ukuran font untuk judul bagian pada layar kecil */
+    }
+    
+    .article-link {
+        font-size: 20px; /* Ukuran font untuk tautan artikel pada layar kecil */
+    }
+    
+    .about-description {
+        font-size: 16px; /* Ukuran font untuk deskripsi tentang pada layar kecil */
+    }
+}
+/*===============================[@] =========== [@]===============================*/
+/*===============================[@] Archives.md [@]===============================*/
+/*===============================[@] Archives.md [@]===============================*/
+/*===============================[@] =========== [@]===============================*/
+/* Gaya untuk deskripsi arsip */
+.archive-intro {
+    font-size: 20px; /* Ukuran font untuk deskripsi */
+    color: #495057; /* Warna teks */
+    line-height: 1.6; /* Jarak antar baris */
+    max-width: 800px; /* Batas lebar untuk keterbacaan */
+    margin: 0 auto 30px; /* Pusatkan deskripsi dan tambahkan margin bawah */
+    text-align: center; /* Pusatkan teks */
+}
+
+/* Gaya untuk daftar arsip */
+.archive-list {
+    list-style-type: none; /* Menghapus titik pada daftar */
+    padding: 0; /* Menghapus padding default */
+}
+
+/* Gaya untuk setiap item arsip */
+.archive-item {
+    margin-bottom: 15px; /* Jarak bawah antara item arsip */
+    padding: 10px; /* Padding di sekitar setiap item */
+    border-bottom: 1px solid #dee2e6; /* Garis pemisah di bawah setiap item */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Bayangan lebih halus untuk efek kedalaman */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi halus saat hover */
+}
+.archive-item:hover{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih gelap saat hover */
+    transform: scale(1.03); /* Memperbesar item saat hover */
+}
+/* Gaya untuk tanggal arsip */
+.archive-date {
+    font-weight: bold; /* Menebalkan tanggal */
+    color: #007bff; /* Warna untuk tanggal */
+}
+
+/* Gaya untuk tautan arsip */
+.archive-link {
+    font-size: 18px; /* Ukuran font untuk tautan arsip */
+    color: #007bff; /* Warna tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
+/* Gaya untuk tautan arsip saat hover */
+.archive-link:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #0056b3; /* Warna saat hover */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .archive-title {
+        font-size: 30px; /* Ukuran font untuk judul arsip pada layar kecil */
+    }
+    
+    .archive-intro {
+        font-size: 18px; /* Ukuran font untuk deskripsi arsip pada layar kecil */
+    }
+    
+    .archive-link {
+        font-size: 16px; /* Ukuran font untuk tautan arsip pada layar kecil */
+    }
+}
+/*===============================[@] =========== [@]===============================*/
+/*===============================[@] Articles.md [@]===============================*/
+/*===============================[@] Articles.md [@]===============================*/
+/*===============================[@] =========== [@]===============================*/
+/* Gaya untuk deskripsi artikel */
+.articles-intro {
+    font-size: 20px; /* Ukuran font untuk deskripsi */
+    color: #495057; /* Warna teks */
+    line-height: 1.6; /* Jarak antar baris */
+    max-width: 800px; /* Batas lebar untuk keterbacaan */
+    margin: 0 auto 30px; /* Pusatkan deskripsi dan tambahkan margin bawah */
+    text-align: center; /* Pusatkan teks */
+}
+/* Gaya untuk kontainer kartu */
+.card-container {
+    display: flex; /* Menggunakan flexbox untuk tata letak yang responsif */
+    flex-direction: column; /* Menampilkan kartu secara vertikal */
+    align-items: center; /* Pusatkan kartu di tengah */
+    margin: 0 auto; /* Pusatkan kontainer */
+}
+
+/* Gaya untuk setiap kartu */
+.card {
+    background-color: #ffffff; /* Warna latar belakang kartu */
+    border: 1px solid #dee2e6; /* Border untuk kartu */
+    border-radius: 8px; /* Sudut melengkung pada kartu */
+    padding: 20px; /* Padding di dalam kartu */
+    margin: 10px 0; /* Jarak vertikal antara kartu */
+    width: 90%; /* Lebar kartu, 90% dari kontainer */
+    max-width: 1000px; /* Batas lebar maksimum untuk kartu */
+    box-shadow: 0 4px 10px rgb(0, 0, 0); /* Bayangan untuk efek kedalaman */
+    transition: transform 0.3s; /* Efek transisi untuk hover */
+}
+
+/* Efek saat hover pada kartu */
+.card:hover {
+    transform: translateY(-5px); /* Mengangkat kartu saat hover */
+}
+
+/* Gaya untuk judul kartu */
+.card-title {
+    font-size: 24px; /* Ukuran font untuk judul kartu */
+    color: #343a40; /* Warna teks untuk judul */
+    margin-bottom: 10px; /* Jarak bawah untuk judul */
+}
+
+/* Gaya untuk tanggal postingan */
+.post-date {
+    font-size: 14px; /* Ukuran font untuk tanggal */
+    color: #6c757d; /* Warna teks untuk tanggal */
+    margin-bottom: 10px; /* Jarak bawah untuk tanggal */
+}
+
+/* Gaya untuk cuplikan kartu */
+.card-excerpt {
+    font-size: 16px; /* Ukuran font untuk cuplikan */
+    color: #495057; /* Warna teks */
+    line-height: 1.5; /* Jarak antar baris */
+    margin-bottom: 15px; /* Jarak bawah untuk cuplikan */
+}
+
+/* Gaya untuk tautan 'Baca Selengkapnya' */
+.read-more {
+    display: inline-block; /* Menampilkan sebagai elemen blok inline */
+    padding: 10px 15px; /* Padding di sekitar tautan */
+    background-color: #007bff; /* Warna latar belakang */
+    color: #ffffff; /* Warna teks */
+    border-radius: 5px; /* Sudut melengkung pada tombol */
+    text-decoration: none; /* Menghapus garis bawah */
+    font-weight: bold; /* Menebalkan teks */
+    transition: background-color 0.3s; /* Efek transisi saat hover */
+}
+
+/* Gaya untuk tautan 'Baca Selengkapnya' saat hover */
+.read-more:hover {
+    background-color: #0056b3; /* Warna saat hover */
+}
+
+/* Gaya untuk tautan 'Lihat Semua Artikel' */
+.more-articles {
+    text-align: center; /* Pusatkan tautan */
+    margin-top: 30px; /* Jarak atas untuk pemisahan */
+}
+
+/* Gaya untuk tautan 'Lihat Semua Artikel' */
+.view-more {
+    font-size: 18px; /* Ukuran font untuk tautan */
+    color: #007bff; /* Warna tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
+/* Gaya untuk tautan 'Lihat Semua Artikel' saat hover */
+.view-more:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 20px); /* Lebar penuh pada layar kecil */
+    }
+
+    .articles-title {
+        font-size: 30px; /* Ukuran font untuk judul pada layar kecil */
+    }
+    
+    .articles-intro {
+        font-size: 18px; /* Ukuran font untuk deskripsi pada layar kecil */
+    }
+}
+/*===============================[@] ============= [@]===============================*/
+/*===============================[@] Categories.md [@]===============================*/
+/*===============================[@] Categories.md [@]===============================*/
+/*===============================[@] ============= [@]===============================*/
+/* Gaya untuk intro kategori */
+.categories-intro {
+    text-align: center; /* Pusatkan teks */
+    font-size: 20px; /* Ukuran font untuk deskripsi */
+    color: #495057; /* Warna teks */
+    margin-bottom: 30px; /* Jarak bawah untuk pemisahan */
+}
+
+/* Gaya untuk daftar kategori */
+.category-list {
+    list-style-type: none; /* Menghapus titik pada daftar */
+    padding: 0; /* Menghapus padding default */
+}
+
+/* Gaya untuk setiap item kategori */
+.category-item {
+    margin-bottom: 40px; /* Jarak bawah antara kategori */
+}
+
+/* Gaya untuk judul kategori */
+.category-title {
+    font-size: 28px; /* Ukuran font untuk judul kategori */
+    color: #343a40; /* Warna teks untuk judul */
+    border-bottom: 2px solid #007bff; /* Garis bawah untuk judul kategori */
+    padding-bottom: 10px; /* Ruang di bawah judul */
+}
+
+/* Gaya untuk daftar pos dalam kategori */
+.post-category-list {
+    list-style-type: none; /* Menghapus titik pada daftar */
+    padding: 0; /* Menghapus padding default */
+    margin-bottom: 15px; /* Jarak bawah antara item arsip */
+    padding: 10px; /* Padding di sekitar setiap item */
+    border-bottom: 1px solid #dee2e6; /* Garis pemisah di bawah setiap item */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.114); /* Bayangan lebih halus untuk efek kedalaman */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi halus saat hover */
+}
+.post-category-list:hover{
+    box-shadow: 0 2px 8px rgb(0, 0, 0); /* Bayangan lebih halus untuk efek kedalaman */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi halus saat hover */
+}
+
+/* Gaya untuk item pos dalam kategori */
+.post-category-item {
+    margin: 5px 0; /* Jarak vertikal antara pos */
+}
+
+/* Gaya untuk tautan pos */
+.post-link {
+    font-size: 16px; /* Ukuran font untuk tautan pos */
+    color: #007bff; /* Warna tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
+/* Gaya untuk tautan pos saat hover */
+.post-link:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Gaya untuk pesan tidak ada pos */
+.no-posts {
+    font-size: 14px; /* Ukuran font untuk pesan tidak ada pos */
+    color: #6c757d; /* Warna teks untuk pesan */
+}
+/*===============================[@] ========= [@]===============================*/
+/*===============================[@] Social.md [@]===============================*/
+/*===============================[@] Social.md [@]===============================*/
+/*===============================[@] ========= [@]===============================*/
+/* Gaya untuk judul media sosial */
+.social-media-title {
+    font-size: 36px; /* Ukuran font untuk judul */
+    color: #343a40; /* Warna teks */
+    text-align: center; /* Pusatkan judul */
+    margin-bottom: 20px; /* Jarak bawah untuk pemisahan */
+}
+
+/* Gaya untuk pengantar media sosial */
+.social-media-intro {
+    font-size: 20px; /* Ukuran font untuk deskripsi */
+    color: #495057; /* Warna teks */
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 40px; /* Jarak bawah untuk pemisahan */
+}
+
+/* Gaya untuk daftar media sosial */
+.social-media-list {
+    list-style-type: none; /* Menghapus titik pada daftar */
+    padding: 0; /* Menghapus padding default */
+    display: flex; /* Menampilkan daftar dalam baris */
+    justify-content: center; /* Pusatkan daftar secara horizontal */
+    flex-wrap: wrap; /* Membuat daftar dapat membungkus ke baris berikutnya */
+}
+
+/* Gaya untuk item media sosial */
+.social-media-item {
+    margin: 0 15px; /* Jarak horizontal antara ikon media sosial */
+}
+
+/* Gaya untuk tautan media sosial */
+.social-media-link {
+    font-size: 30px; /* Ukuran font untuk ikon */
+    color: #007bff; /* Warna ikon */
+    transition: color 0.3s; /* Efek transisi saat hover */
+}
+
+/* Gaya untuk tautan media sosial saat hover */
+.social-media-link:hover {
+    color: #0056b3; /* Warna saat hover */
+}
+/*===============================[@] ======= [@]===============================*/
+/*===============================[@] Tags.md [@]===============================*/
+/*===============================[@] Tags.md [@]===============================*/
+/*===============================[@] ======= [@]===============================*/
+/* Gaya untuk judul tags */
+.tags-title {
+    font-size: 36px; /* Ukuran font untuk judul */
+    color: #343a40; /* Warna teks */
+    text-align: center; /* Pusatkan judul */
+    margin-bottom: 20px; /* Jarak bawah untuk pemisahan */
+}
+
+/* Gaya untuk pengantar tags */
+.tags-intro {
+    font-size: 20px; /* Ukuran font untuk deskripsi */
+    color: #495057; /* Warna teks */
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 40px; /* Jarak bawah untuk pemisahan */
+}
+
+/* Gaya untuk daftar tag */
+.tag-list {
+    list-style-type: none; /* Menghapus titik pada daftar */
+    padding: 0; /* Menghapus padding default */
+}
+
+/* Gaya untuk item tag */
+.tag-item {
+    margin-bottom: 30px; /* Jarak bawah antara item tag */
+    border-bottom: 1px solid #dee2e6; /* Garis pemisah antara tag */
+    padding-bottom: 15px; /* Ruang di bawah setiap item tag */
+}
+
+/* Gaya untuk judul tag */
+.tag-title {
+    font-size: 24px; /* Ukuran font untuk judul tag */
+    color: #007bff; /* Warna teks untuk judul tag */
+    margin-bottom: 10px; /* Jarak bawah untuk judul tag */
+}
+
+/* Gaya untuk daftar postingan berdasarkan tag */
+.post-tag-list {
+    list-style-type: none; /* Menghapus titik pada daftar */
+    padding: 0; /* Menghapus padding default */
+}
+
+/* Gaya untuk item postingan */
+.post-tag-item {
+    margin-bottom: 10px; /* Jarak bawah untuk item postingan */
+    list-style-type: none; /* Menghapus titik pada daftar */
+    padding: 0; /* Menghapus padding default */
+    margin-bottom: 15px; /* Jarak bawah antara item arsip */
+    border-bottom: 1px solid #dee2e6; /* Garis pemisah di bawah setiap item */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.114); /* Bayangan lebih halus untuk efek kedalaman */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi halus saat hover */
+}
+.post-tag-item:hover{
+    box-shadow: 0 2px 8px rgb(0, 0, 0); /* Bayangan lebih halus untuk efek kedalaman */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi halus saat hover */
+}
+
+/* Gaya untuk tautan postingan */
+.post-link {
+    color: #007bff; /* Warna tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
+/* Gaya untuk tautan postingan saat hover */
+.post-link:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Gaya untuk pesan tidak ada postingan */
+.no-posts {
+    font-style: italic; /* Menggunakan gaya italic */
+    color: #6c757d; /* Warna teks */
+}

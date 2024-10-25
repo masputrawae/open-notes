@@ -3,6 +3,7 @@ layout: page
 title: "Social"
 permalink: /social/
 ---
+
 <h1 class="social-media-title">Social Media</h1>
 
 <p class="social-media-intro">Follow us on our social media channels:</p>

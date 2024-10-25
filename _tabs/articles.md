@@ -3,7 +3,7 @@ layout: page
 title: "Articles"
 permalink: /articles/
 ---
-<h1 class="articles-title">Daftar Artikel Terbaru</h1>
+
 <p class="articles-intro">Welcome to the articles section! Here you can find a list of all articles published on this site.</p>
 
 <div class="card-container">

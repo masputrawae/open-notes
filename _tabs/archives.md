@@ -3,9 +3,6 @@ layout: page
 title: "Archives"
 permalink: /archives/
 ---
-
-<h1 class="archive-title">Archives</h1>
-
 <p class="archive-intro">
   Here you can find all our articles sorted by month and year. Browse through our posts to explore our content over time.
 </p>

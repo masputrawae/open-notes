@@ -3,7 +3,7 @@ layout: page
 title: "Categories"
 permalink: /categories/
 ---
-<h1 class="categories-title">Daftar Kategori dan Postingan</h1>
+
 <p class="categories-intro">Here are the categories of articles available on this site:</p>
 
 <ul class="category-list">
