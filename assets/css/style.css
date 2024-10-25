@@ -7,8 +7,8 @@
     padding: 10px 15px;
     cursor: pointer;
     position: fixed; /* Membuat tombol tetap di layar */
-    top: 5px; /* Jarak dari atas layar */
-    left: 5px; /* Jarak dari kiri layar */
+    top: 1px; /* Jarak dari atas layar */
+    left: 1px; /* Jarak dari kiri layar */
     z-index: 2000; /* Pastikan tombol berada di atas elemen lainnya */
     display: none; /* Sembunyikan tombol di desktop */
 }
