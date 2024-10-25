@@ -1,0 +1,27 @@
+---
+layout: page
+title: Search
+permalink: /search.html
+---
+<!-- Tempat untuk hasil pencarian -->
+<ul id="search-results"></ul>
+
+<!-- Script untuk menyimpan data post ke dalam objek store -->
+<script>
+  window.store = {
+    {% for post in site.posts %}
+      "{{ post.url | slugify }}": {
+        "title": "{{ post.title | xml_escape }}",
+        "author": "{{ post.author | xml_escape }}",
+        "category": "{{ post.category | xml_escape }}",
+        "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+        "url": "{{ post.url | xml_escape }}"
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+</script>
+
+<!-- Menghubungkan Lunr.js dan script pencarian -->
+<script src="{{ '/assets/js/lunr.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>

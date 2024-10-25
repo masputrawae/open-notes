@@ -37,6 +37,7 @@
         </a>
       </div>
       
+      
       <!-- Menu navigasi utama -->
       <h3>Main Menu</h3> <!-- Menggunakan <h3> untuk menjaga hierarki heading -->
       <nav aria-label="Main navigation">
@@ -53,15 +54,16 @@
         </ul>
       </nav>
     </aside>
-
+    <button class="toggle-button" aria-label="Toggle sidebar">
+      <i class="fas fa-bars"></i>
+    </button>
     <!-- Konten utama yang menampilkan halaman atau postingan -->
     <main class="content">
       <!-- Search bar untuk mencari konten di situs -->
       <div class="search-bar">
-        <form action="{{ '/search/' | relative_url }}" method="get" role="search">
-          <!-- Input teks untuk pencarian -->
-          <input type="text" name="q" placeholder="Search..." aria-label="Search">
-          <!-- Tombol untuk mengirimkan pencarian -->
+        <form action="{{ '/search.html' | relative_url }}" method="get">
+          <label for="search-box">Search</label>
+          <input type="text" id="search-box" name="query">
           <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
         </form>
       </div>

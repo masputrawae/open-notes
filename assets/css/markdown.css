@@ -1,0 +1,137 @@
+/* Gaya untuk elemen heading di dalam konten Markdown */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    color: #2c3e50; /* Warna teks yang lebih gelap untuk kontras yang baik */
+    margin-top: 1.5rem; /* Jarak atas untuk heading */
+    margin-bottom: 0.5rem; /* Jarak bawah untuk heading */
+    font-weight: 600; /* Menebalkan teks */
+    line-height: 1.25; /* Tinggi baris untuk meningkatkan keterbacaan */
+}
+
+/* Gaya untuk paragraf di dalam konten Markdown */
+.markdown-content p {
+    font-size: 17px; /* Ukuran font untuk paragraf */
+    line-height: 1.8; /* Jarak antar baris untuk keterbacaan yang lebih baik */
+    margin-bottom: 1.5rem; /* Jarak bawah untuk paragraf */
+    color: #34495e; /* Warna teks yang lebih lembut */
+    text-align: justify; /* Rata kiri dan kanan untuk teks */
+}
+
+/* Gaya untuk daftar tidak terurut di dalam konten Markdown */
+.markdown-content ul {
+    list-style-type: disc; /* Tipe list untuk daftar tidak terurut */
+    margin-left: 20px; /* Jarak kiri untuk daftar */
+    margin-bottom: 1.5rem; /* Jarak bawah untuk daftar */
+}
+
+/* Gaya untuk item daftar tidak terurut di dalam konten Markdown */
+.markdown-content ul li {
+    margin-bottom: 0.5rem; /* Jarak bawah untuk item daftar */
+    position: relative; /* Posisi relatif untuk efek visual */
+    padding-left: 1.5rem; /* Padding kiri untuk memberi ruang pada simbol list */
+}
+
+.markdown-content ul li::marker {
+    color: #007bff; /* Warna simbol daftar */
+}
+
+/* Gaya untuk daftar terurut di dalam konten Markdown */
+.markdown-content ol {
+    list-style-type: decimal; /* Tipe list untuk daftar terurut */
+    margin-left: 20px; /* Jarak kiri untuk daftar */
+    margin-bottom: 1.5rem; /* Jarak bawah untuk daftar */
+}
+
+/* Gaya untuk item daftar terurut di dalam konten Markdown */
+.markdown-content ol li {
+    margin-bottom: 0.5rem; /* Jarak bawah untuk item daftar */
+}
+
+/* Gaya untuk kutipan di dalam konten Markdown */
+.markdown-content blockquote {
+    margin: 1.5rem 0; /* Jarak atas dan bawah untuk kutipan */
+    padding: 1.2rem; /* Padding di dalam kutipan */
+    border-left: 4px solid #2980b9; /* Garis kiri pada kutipan */
+    background-color: #ecf6fc; /* Warna latar belakang kutipan */
+    color: #34495e; /* Warna teks */
+    font-style: italic; /* Miringkan teks kutipan */
+    border-radius: 4px; /* Sudut melengkung pada kutipan */
+}
+
+/* Gaya untuk tautan di dalam konten Markdown */
+.markdown-content a {
+    color: #007bff; /* Warna tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+    transition: color 0.3s, border-bottom 0.3s; /* Transisi halus saat hover */
+    position: relative; /* Posisi relatif untuk efek visual */
+}
+
+.markdown-content a:hover {
+    color: #0056b3; /* Warna saat hover */
+}
+
+.markdown-content a:hover::after {
+    content: ''; /* Menambahkan garis bawah saat hover */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px; /* Jarak bawah untuk garis bawah */
+    height: 2px; /* Tinggi garis bawah */
+    background: #007bff; /* Warna garis bawah */
+}
+
+/* Gaya untuk gambar di dalam konten Markdown */
+.markdown-content img {
+    max-width: 100%; /* Memastikan gambar responsif */
+    height: auto; /* Mengatur tinggi otomatis untuk gambar */
+    border-radius: 4px; /* Sudut melengkung pada gambar */
+    margin: 1.5rem 0; /* Jarak atas dan bawah untuk gambar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus untuk gambar */
+}
+
+/* Gaya untuk tabel di dalam konten Markdown */
+.markdown-content table {
+    width: 100%; /* Tabel mengambil lebar penuh */
+    border-collapse: collapse; /* Menghapus jarak antara border sel */
+    margin: 1.5rem 0; /* Jarak atas dan bawah untuk tabel */
+}
+
+/* Gaya untuk header dan sel tabel */
+.markdown-content th,
+.markdown-content td {
+    padding: 12px; /* Padding di dalam sel */
+    border: 1px solid #dee2e6; /* Border untuk sel */
+    text-align: left; /* Rata kiri untuk teks */
+}
+
+/* Gaya untuk header tabel */
+.markdown-content th {
+    background-color: #007bff; /* Warna latar belakang untuk header tabel */
+    color: #ffffff; /* Warna teks untuk header tabel */
+    font-weight: bold; /* Menebalkan teks pada header tabel */
+}
+
+/* Gaya untuk kode di dalam konten Markdown */
+.markdown-content code {
+    background-color: #f8f9fa; /* Warna latar belakang untuk kode */
+    padding: 2px 4px; /* Padding di dalam kode */
+    border-radius: 4px; /* Sudut melengkung */
+    font-family: monospace; /* Font monospace untuk kode */
+    color: #c7254e; /* Warna teks untuk kode */
+}
+
+/* Gaya untuk blok kode di dalam konten Markdown */
+.markdown-content pre {
+    background-color: #f8f9fa; /* Warna latar belakang untuk blok kode */
+    padding: 1.5rem; /* Padding di dalam blok kode */
+    border-radius: 4px; /* Sudut melengkung */
+    overflow-x: auto; /* Mengizinkan scroll horizontal */
+    font-family: monospace; /* Font monospace untuk blok kode */
+    border: 1px solid #dee2e6; /* Border untuk blok kode */
+    color: #333; /* Warna teks untuk blok kode */
+    margin: 1.5rem 0; /* Jarak atas dan bawah untuk blok kode */
+}

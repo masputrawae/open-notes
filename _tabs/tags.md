@@ -3,8 +3,6 @@ layout: page
 title: "Tags"
 permalink: /tags/
 ---
-
-<h1 class="tags-title">Daftar Tags dan Postingan</h1>
 <p class="tags-intro">Berikut adalah tags dari artikel yang tersedia di situs ini:</p>
 
 <ul class="tag-list">

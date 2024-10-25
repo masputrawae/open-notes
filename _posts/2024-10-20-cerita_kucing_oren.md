@@ -16,6 +16,7 @@ excerpt: Cerita lucu kucing oyen
 status: published
 thumbnail: 
 post: true
+comments: true
 ---
 # **Petualangan Si Kucing yang Mau Jadi Superhero Tapi Takut Air**
 

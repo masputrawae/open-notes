@@ -1,19 +1,12 @@
-// Toggle Header visibility
-document.getElementById('toggleHeader').addEventListener('click', function() {
-  const header = document.getElementById('header');
-  if (header.style.display === 'none') {
-    header.style.display = 'flex';  // Show header
-  } else {
-    header.style.display = 'none';  // Hide header
-  }
-});
 
-// Toggle Sidebar visibility
-document.getElementById('toggleSidebar').addEventListener('click', function() {
-  const sidebar = document.getElementById('sidebar');
-  if (sidebar.style.display === 'none') {
-    sidebar.style.display = 'flex';  // Show sidebar
-  } else {
-    sidebar.style.display = 'none';  // Hide sidebar
-  }
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.querySelector('.toggle-button');
+        const sidebar = document.querySelector('.main-menu');
+        const container = document.querySelector('.container');
+
+        // Menangani klik pada tombol toggle
+        toggleButton.addEventListener('click', function() {
+            sidebar.classList.toggle('active'); // Toggle class 'active' pada sidebar
+            container.classList.toggle('sidebar-active'); // Toggle class 'sidebar-active' pada container
+        });
+    });

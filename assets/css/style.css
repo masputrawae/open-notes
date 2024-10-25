@@ -1,3 +1,55 @@
+/* Gaya untuk tombol toggle */
+.toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: fixed; /* Membuat tombol tetap di layar */
+    top: 5px; /* Jarak dari atas layar */
+    left: 5px; /* Jarak dari kiri layar */
+    z-index: 2000; /* Pastikan tombol berada di atas elemen lainnya */
+    display: none; /* Sembunyikan tombol di desktop */
+}
+
+/* Responsif: Tampilkan tombol di mobile */
+@media (max-width: 768px) {
+    .toggle-button {
+        display: block; /* Tampilkan tombol hanya di mobile */
+    }
+}
+
+/* Kontainer utama (untuk perpindahan di mobile) */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+
+    .main-menu {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Sesuaikan ke ukuran lebar sidebar */
+        width: 100%; /* Lebar sidebar yang lebih kecil */
+        height: 100vh;
+        background-color: #ffffff;
+        padding: 20px;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .main-menu.active {
+        left: 0;
+    }
+
+    /* Konten utama bergeser saat sidebar aktif */
+    .container.sidebar-active {
+        transform: translateX(1%); /* Sesuaikan transformasi agar cocok dengan lebar sidebar */
+    }
+}
 /*===============================[@] ============ [@]===============================*/
 /*===============================[@] Default.HTML [@]===============================*/
 /*===============================[@] Default.HTML [@]===============================*/
@@ -7,7 +59,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 12px;
 }
 
 /* Gaya untuk container utama */
@@ -102,7 +153,7 @@ nav ul li a:hover {
 /* Gaya untuk search bar */
 .search-bar {
     display: flex;
-    justify-content: center; /* Pusatkan elemen */
+    justify-content: right; /* Pusatkan elemen */
     margin-bottom: 20px; /* Jarak di bawah search bar */
 }
 
@@ -792,4 +843,51 @@ nav ul li a:hover {
 .no-posts {
     font-style: italic; /* Menggunakan gaya italic */
     color: #6c757d; /* Warna teks */
+}
+
+/*===============================[@] ======= [@]===============================*/
+/*===============================[@] Search.HTML [@]===============================*/
+/*===============================[@] Search.HTML [@]===============================*/
+/*===============================[@] ======= [@]===============================*/
+/* Gaya untuk hasil pencarian */
+#search-results {
+    list-style: none; /* Menghilangkan bullet points */
+    padding: 0; /* Menghilangkan padding default */
+    margin: 20px 0; /* Margin untuk jarak di atas dan bawah */
+}
+
+#search-results li {
+    margin: 15px 0; /* Jarak antara item hasil pencarian */
+    padding: 20px; /* Padding di dalam item */
+    border: 1px solid #ccc; /* Border abu-abu */
+    border-radius: 8px; /* Sudut membulat */
+    background-color: #ffffff; /* Latar belakang item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    transition: background-color 0.3s, transform 0.3s; /* Transisi halus untuk latar belakang dan transformasi */
+}
+
+#search-results li:hover {
+    background-color: #f1f1f1; /* Warna latar belakang saat hover */
+    transform: translateY(-2px); /* Efek angkat saat hover */
+}
+
+/* Gaya untuk tautan di dalam hasil pencarian */
+#search-results a {
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    color: #007bff; /* Warna tautan */
+    font-weight: bold; /* Menebalkan teks tautan */
+    font-size: 1.2em; /* Ukuran font untuk tautan */
+    display: block; /* Membuat tautan menjadi blok untuk seluruh area */
+    margin-bottom: 5px; /* Jarak bawah antara tautan dan informasi tambahan */
+}
+
+#search-results a:hover {
+    color: #0056b3; /* Warna tautan saat hover */
+}
+
+/* Gaya untuk informasi tambahan di bawah tautan */
+#search-results .post-meta {
+    font-size: 0.9em; /* Ukuran font untuk informasi tambahan */
+    color: #666; /* Warna teks abu-abu */
+    margin-top: 5px; /* Jarak atas untuk memisahkan informasi tambahan dari tautan */
 }
