@@ -1,0 +1,55 @@
+/* layout.css */
+
+/* Gaya untuk konten utama */
+.content {
+    flex: 1;
+    padding: 20px; /* Diperkecil */
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s; /* Menambahkan transisi */
+}
+
+.content:hover {
+    background-color: #f9f9f9; /* Menambahkan efek hover */
+}
+
+/* Gaya untuk search bar */
+.search-bar {
+    margin-bottom: 15px; /* Diperkecil */
+    display: flex;
+}
+
+.search-bar form {
+    flex: 1;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px; /* Diperkecil */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em; /* Diperkecil */
+    transition: border-color 0.3s;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #4A4A4A;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 12px; /* Diperkecil */
+    border: none;
+    background-color: #4A4A4A;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-bar button:hover {
+    background-color: #333;
+    transform: scale(1.05); /* Efek kecil saat hover */
+}

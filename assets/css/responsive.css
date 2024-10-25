@@ -1,0 +1,35 @@
+/* responsive.css */
+
+/* Gaya untuk layout yang responsif */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px; /* Mengurangi padding pada container */
+    }
+
+    .main-menu {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .toggle-button {
+        display: block;
+    }
+
+    .content {
+        padding: 15px; /* Diperkecil */
+    }
+
+    .main-menu h3 {
+        font-size: 1.1em; /* Diperkecil */
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

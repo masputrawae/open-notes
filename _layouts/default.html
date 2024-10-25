@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <!-- Metadata dasar untuk pengaturan karakter dan responsivitas -->
   <meta charset="UTF-8">
@@ -15,9 +15,10 @@
   <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | relative_url }}">
   
   <!-- Menghubungkan stylesheet utama -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"> <!-- CSS UTAMA -->
-  <link rel="stylesheet" href="{{ '/assets/css/markdown.css' | relative_url }}"> <!-- CSS Markdown -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="{{ '/assets/css/responsive.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="container">
@@ -32,13 +33,12 @@
       <!-- Logo situs yang dapat diklik untuk kembali ke halaman utama -->
       <div class="logo">
         <a href="{{ '/' | relative_url }}">
-          <img src="{{ '/assets/images/logo.jpeg' | relative_url }}" alt="Logo dari {{ site.title }}"> <!-- Gambar logo -->
+          <img src="{{ '/assets/images/logo.jpeg' | relative_url }}" alt="Logo dari {{ site.title }}">
         </a>
       </div>
       
-      
       <!-- Menu navigasi utama -->
-      <h3>Main Menu</h3> <!-- Menggunakan <h3> untuk menjaga hierarki heading -->
+      <h3>Main Menu</h3>
       <nav aria-label="Main navigation">
         <ul>
           <!-- Daftar tautan navigasi -->
@@ -53,16 +53,18 @@
         </ul>
       </nav>
     </aside>
+
     <button class="toggle-button" aria-label="Toggle sidebar">
       <i class="fas fa-bars"></i>
     </button>
+
     <!-- Konten utama yang menampilkan halaman atau postingan -->
     <main class="content">
       <!-- Search bar untuk mencari konten di situs -->
       <div class="search-bar">
         <form action="{{ '/search.html' | relative_url }}" method="get">
           <label for="search-box">Search</label>
-          <input type="text" id="search-box" name="query">
+          <input type="text" id="search-box" name="query" required> <!-- Menambahkan atribut required untuk input pencarian -->
           <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
         </form>
       </div>
@@ -73,7 +75,7 @@
 
   <!-- Bagian footer yang menampilkan informasi hak cipta -->
   <footer class="footer">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p> <!-- Informasi hak cipta -->
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
   </footer>
   
   <!-- Menghubungkan file JavaScript -->

@@ -1,8 +1,8 @@
 # Informasi Situs
 title: "Masputrawae"
 description: "Tempat Penampungan Isi Fikiran Dan Hasrat Yang Terpendam"
-url: "https://github.com/masputrawae" # Ganti dengan domain kamu atau localhost untuk pengujian lokal
-baseurl: "/open-notes" # Pastikan tetap kosong jika situs berada di root domain (contoh: https://namadomain.com)
+url: "" # Ganti dengan domain kamu atau localhost untuk pengujian lokal
+baseurl: "" # Pastikan tetap kosong jika situs berada di root domain (contoh: https://namadomain.com)
 
 # Informasi penulis
 author:

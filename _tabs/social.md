@@ -8,7 +8,8 @@ permalink: /social/
 
 <p class="social-media-intro">Follow us on our social media channels:</p>
 
-<ul class="social-media-list">
+<ul class="social-media-list" aria-labelledby="social-media-title">
+    <h2 id="social-media-title" class="visually-hidden">Social Media Links</h2> <!-- Menambahkan judul yang tersembunyi untuk aksesibilitas -->
     <li class="social-media-item">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" class="social-media-link">
             <i class="fab fa-facebook-f"></i>
