@@ -1,8 +1,8 @@
 # Informasi Situs
 title: "Masputrawae"
 description: "Tempat Penampungan Isi Fikiran Dan Hasrat Yang Terpendam"
-url: "https://masputrawae.github.io" # Ganti dengan domain kamu atau localhost untuk pengujian lokal
-baseurl: "/pangkalan-pengetahuan" # Pastikan tetap kosong jika situs berada di root domain (contoh: https://namadomain.com)
+url: "" # Ganti dengan domain kamu atau localhost untuk pengujian lokal
+baseurl: "" # Pastikan tetap kosong jika situs berada di root domain (contoh: https://namadomain.com)
 
 # Informasi penulis
 author:
@@ -24,7 +24,9 @@ paginate_path: "/page:num/" # URL untuk paginasi
 collections:
   pages:
     output: true
-
+  tabs:
+    output: true
+    sort_by: order
 # Defaults
 defaults:
   - scope:
@@ -49,6 +51,7 @@ plugins:
   - jekyll-feed # Plugin untuk membuat RSS Feed
   - jekyll-seo-tag # Plugin untuk SEO
   - jekyll-paginate
+  - jekyll-toc
 # Konfigurasi Build
 future: true
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"

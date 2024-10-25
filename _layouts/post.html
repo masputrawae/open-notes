@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header>
+    <h1>{{ page.title }}</h1> <!-- Judul Post -->
+    <p class="post-meta">
+      <time datetime="{{ page.date | date: "%Y-%m-%d" }}">
+        {{ page.date | date: "%B %d, %Y" }} <!-- Tanggal Post dalam format bulan dan tahun -->
+      </time>
+    </p>
+  </header>
+
+  <div class="post-content">
+    {{ content }} <!-- Konten Post yang diambil dari file Markdown -->
+  </div>
+
+  <!-- Bagian komentar (opsional) -->
+  <section class="comments">
+    <h2>Comments</h2> <!-- Judul untuk bagian komentar -->
+    <!-- Tempat untuk sistem komentar, bisa menggunakan Disqus atau sistem komentar lainnya -->
+    <div id="disqus_thread"></div>
+    
+    <!-- Skrip untuk menghubungkan sistem komentar Disqus -->
+    <script>
+      var disqus_config = function () {
+        // Mengatur URL dan ID untuk halaman komentar
+        this.page.url = '{{ page.url }}';  // URL kanonik dari halaman
+        this.page.identifier = '{{ page.id }}'; // ID unik untuk halaman ini
+      };
+
+      // Memuat skrip Disqus
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js'; // Ganti dengan shortname Disqus Anda
+        s.setAttribute('data-timestamp', +new Date()); // Timestamp untuk cache
+        (d.head || d.body).appendChild(s); // Menyisipkan skrip ke dalam dokumen
+      })();
+    </script>
+    <noscript>
+      <!-- Pesan jika JavaScript dinonaktifkan -->
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  </section>
+</article>
