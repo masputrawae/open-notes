@@ -1,0 +1,225 @@
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(0, 86.1, 178.5);
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+.site-header:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.site-header .logo img {
+  max-width: 100px;
+  height: auto;
+}
+.site-header .search-bar form {
+  display: flex;
+  align-items: center;
+}
+.site-header .search-bar form input[type=text] {
+  padding: 10px;
+  margin-right: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+.site-header .search-bar form input[type=text]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.site-header .search-bar form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+.site-header .search-bar form button:hover {
+  color: rgb(0, 86.1, 178.5);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+.container .main-menu {
+  width: 220px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.container .main-menu h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.container .main-menu nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+.container .main-menu nav ul li {
+  margin-bottom: 10px;
+}
+.container .main-menu nav ul li a {
+  display: flex;
+  align-items: center;
+}
+.container .main-menu nav ul li a i {
+  margin-right: 5px;
+}
+.container .main-menu nav ul li a:hover {
+  color: rgb(0, 86.1, 178.5);
+  font-weight: bold;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.container .main-content {
+  flex: 1;
+  min-width: 300px;
+}
+.container .main-content .content {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.container .main-content .content img {
+  max-width: 100%;
+  height: auto;
+  float: right;
+  margin-left: 20px;
+}
+
+.site-footer {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+.site-footer p {
+  margin: 0;
+  font-size: 12px;
+  color: gray;
+}
+.site-footer p a {
+  color: #007bff;
+}
+.site-footer p a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+.post .post-header h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.post .post-header h2:hover {
+  color: rgb(0, 86.1, 178.5);
+}
+.post .post-header .post-meta {
+  font-size: 12px;
+  color: gray;
+}
+.post .post-content {
+  margin-top: 10px;
+}
+.post .post-footer hr {
+  margin: 20px 0;
+}
+.post .post-footer .back-to-archives {
+  font-size: 14px;
+  color: #007bff;
+}
+.post .post-footer .back-to-archives:hover {
+  text-decoration: underline;
+}
+
+.page {
+  margin-bottom: 20px;
+}
+.page .page-header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.page .page-header h1:hover {
+  color: rgb(0, 86.1, 178.5);
+}
+.page .page-footer p {
+  font-size: 14px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.breadcrumb a {
+  color: #007bff;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .main-menu {
+    width: 100%;
+    margin-right: 0;
+  }
+  .main-content {
+    width: 100%;
+  }
+  .site-header, .site-footer {
+    padding: 10px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

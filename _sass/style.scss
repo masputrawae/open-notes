@@ -1,0 +1,297 @@
+@use "sass:color"; // Mengimpor modul warna
+
+// Variables
+$font-stack: 'Arial', sans-serif;
+$primary-color: #333;
+$background-color: #f9f9f9; // putih terang
+$header-background: #ffffff; // latar belakang header
+$footer-background: #ffffff; // latar belakang footer
+$link-color: #007bff; // warna tautan
+$link-hover-color: color.adjust($link-color, $lightness: -15%); // warna tautan saat hover
+$border-color: #e0e0e0; // warna batas
+$spacing: 20px; // spasi umum
+$max-width: 1200px; // lebar maksimum untuk konten utama
+
+// Base Styles
+body {
+    font-family: $font-stack;
+    font-size: 14px; // ukuran font lebih kecil
+    line-height: 1.6;
+    background-color: $background-color;
+    color: $primary-color;
+    margin: 0; // Menghilangkan margin default
+    padding: 0; // Menghilangkan padding default
+    transition: background-color 0.3s ease; // Transisi latar belakang
+}
+
+// Tautan
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: underline; // garis bawah saat hover
+        font-weight: bold; // Bolder saat hover
+        transition: color 0.3s ease, font-weight 0.3s ease; // Transisi yang halus
+    }
+}
+
+// Header
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $header-background;
+    padding: $spacing;
+    border-bottom: 1px solid $border-color;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // bayangan halus untuk header
+    transition: box-shadow 0.3s ease; // transisi bayangan
+
+    &:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // bayangan lebih gelap saat hover
+    }
+
+    .logo {
+        img {
+            max-width: 100px; // ukuran logo
+            height: auto; // responsif
+        }
+    }
+
+    .search-bar {
+        form {
+            display: flex;
+            align-items: center;
+
+            input[type="text"] {
+                padding: 10px; // Padding yang lebih baik untuk aksesibilitas
+                margin-right: 5px;
+                border: 1px solid $border-color;
+                border-radius: 4px;
+                font-size: 14px; // ukuran font lebih kecil
+                transition: border-color 0.3s ease; // transisi halus
+
+                &:focus {
+                    border-color: $link-color; // Perubahan warna saat fokus
+                    outline: none; // Menghilangkan outline default
+                }
+            }
+
+            button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 16px; // ukuran ikon lebih besar
+                padding: 0 10px; // padding di sekitar tombol
+                transition: color 0.3s ease; // transisi halus untuk warna
+
+                &:hover {
+                    color: $link-hover-color; // Ubah warna saat hover
+                }
+            }
+        }
+    }
+}
+
+// Main Container
+.container {
+    display: flex;
+    flex-wrap: wrap; // Agar responsif
+    margin: $spacing auto; // Pusatkan konten
+    max-width: $max-width; // Lebar maksimum untuk konten utama
+
+    .main-menu {
+        width: 220px; // lebar sidebar
+        margin-right: $spacing;
+        flex-shrink: 0; // Menghindari sidebar menyusut
+        background-color: #ffffff; // latar belakang sidebar
+        padding: $spacing; // padding di sekitar sidebar
+        border-radius: 4px; // radius untuk sudut
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // bayangan sidebar
+
+        h3 {
+            font-size: 16px; // ukuran font lebih kecil
+            margin-bottom: 10px;
+            color: $primary-color; // Warna judul
+            text-transform: uppercase; // Mengubah semua huruf menjadi kapital
+            letter-spacing: 1px; // Jarak antar huruf
+        }
+
+        nav {
+            ul {
+                list-style-type: none;
+                padding: 0;
+
+                li {
+                    margin-bottom: 10px;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+
+                        i {
+                            margin-right: 5px; // spasi antara ikon dan teks
+                        }
+
+                        &:hover {
+                            color: $link-hover-color; // Ubah warna saat hover
+                            font-weight: bold; // Bolder saat hover
+                            transition: color 0.3s ease, font-weight 0.3s ease; // Transisi yang halus
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content {
+        flex: 1; // Memungkinkan konten utama mengambil sisa ruang
+        min-width: 300px; // Lebar minimum
+
+        .content {
+            background: #fff;
+            padding: $spacing;
+            border: 1px solid $border-color;
+            border-radius: 4px;
+            margin-bottom: $spacing; // jarak antar konten
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // bayangan halus untuk kedalaman
+
+            // Gaya untuk gambar dan media
+            img {
+                max-width: 100%; // responsif
+                height: auto;
+                float: right; // gambar di sebelah kanan teks
+                margin-left: $spacing; // jarak antara gambar dan teks
+            }
+        }
+    }
+}
+
+// Footer
+.site-footer {
+    background-color: $footer-background;
+    padding: $spacing;
+    text-align: center;
+    border-top: 1px solid $border-color;
+
+    p {
+        margin: 0;
+        font-size: 12px; // ukuran font lebih kecil
+        color: gray;
+
+        a {
+            color: $link-color;
+
+            &:hover {
+                text-decoration: underline; // garis bawah saat hover
+                font-weight: bold; // Bolder saat hover
+            }
+        }
+    }
+}
+
+// Post Styles
+.post {
+    margin-bottom: $spacing;
+
+    .post-header {
+        h2 {
+            font-size: 20px; // ukuran font lebih besar
+            margin-bottom: 5px;
+            border-bottom: 1px solid $border-color; // garis bawah judul
+            padding-bottom: 5px; // padding di bawah judul
+            transition: color 0.3s ease; // transisi warna
+
+            &:hover {
+                color: $link-hover-color; // Ubah warna saat hover
+            }
+        }
+
+        .post-meta {
+            font-size: 12px; // ukuran font lebih kecil
+            color: gray;
+        }
+    }
+
+    .post-content {
+        margin-top: 10px;
+    }
+
+    .post-footer {
+        hr {
+            margin: $spacing 0;
+        }
+
+        .back-to-archives {
+            font-size: 14px; // ukuran font lebih kecil
+            color: $link-color;
+
+            &:hover {
+                text-decoration: underline; // garis bawah saat hover
+            }
+        }
+    }
+}
+
+// Page Styles
+.page {
+    margin-bottom: $spacing;
+
+    .page-header {
+        h1 {
+            font-size: 24px; // ukuran font lebih besar
+            margin-bottom: 10px;
+            border-bottom: 1px solid $border-color; // garis bawah judul
+            padding-bottom: 5px; // padding di bawah judul
+            transition: color 0.3s ease; // transisi warna
+
+            &:hover {
+                color: $link-hover-color; // Ubah warna saat hover
+            }
+        }
+    }
+
+    .page-footer {
+        p {
+            font-size: 14px; // ukuran font lebih kecil
+        }
+    }
+}
+
+// Breadcrumb Navigation
+.breadcrumb {
+    font-size: 14px; // ukuran font untuk breadcrumb
+    margin-bottom: $spacing;
+    padding: 10px; // padding di sekitar breadcrumb
+    background: #f1f1f1; // latar belakang breadcrumb
+    border-radius: 4px; // radius sudut untuk breadcrumb
+
+    a {
+        color: $link-color;
+
+        &:hover {
+            text-decoration: underline; // garis bawah saat hover
+        }
+    }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; // Mengubah arah flex pada perangkat kecil
+    }
+
+    .main-menu {
+        width: 100%; // Sidebar mengisi lebar penuh pada perangkat kecil
+        margin-right: 0; // Menghilangkan margin kanan
+    }
+
+    .main-content {
+        width: 100%; // Konten utama mengisi lebar penuh
+    }
+
+    .site-header, .site-footer {
+        padding: 10px; // Mengurangi padding di header dan footer untuk perangkat kecil
+    }
+}

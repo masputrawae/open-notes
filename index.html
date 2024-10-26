@@ -1,36 +1,31 @@
 ---
 layout: page
+title: Beranda
 ---
 
-<div class="homepage-intro">
-    <h1 class="intro-title">Welcome to {{ site.title }}</h1>
-    <p class="intro-description">Your one-stop destination for knowledge, articles, and resources on various topics.</p>
-</div>
+<section>
+    <h2>Selamat Datang di {{ site.title }}</h2>
+    <p>Ini adalah platform yang bertujuan untuk berbagi pengetahuan seputar teknologi, pemrograman, dan lebih banyak lagi.</p>
+</section>
 
-<section class="recent-posts">
-    <h2 class="section-title">Recent Articles</h2> <!-- Gunakan <h2> untuk konsistensi -->
-    <ul class="article-list">
-      {% for post in paginator.posts %}
-        <li class="article-item">
-          <a href="{{ post.url | relative_url }}" class="article-link" aria-label="Read '{{ post.title }}'">{{ post.title }}</a>
-          <p class="article-excerpt">{{ post.excerpt | truncatewords: 10 }}</p>
-          <p class="article-date">{{ post.date | date: "%d %B %Y" }}</p> <!-- Menampilkan tanggal -->
-        </li>
-      {% endfor %}
+<section>
+    <h3>Post Terbaru</h3>
+    <ul class="recent-posts">
+        {% for post in paginator.posts %}
+            <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <p>Diposting pada {{ post.date | date: '%B %d, %Y' }}</p>
+                <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            </li>
+        {% endfor %}
     </ul>
 </section>
 
-<section class="about-section">
-    <h2 class="section-title">About Us</h2>
-    <p class="about-description">We are dedicated to providing valuable insights and information. Learn more about us on the <a href="{{ '/about/' | relative_url }}" class="about-link" aria-label="Learn more about us">About</a> page.</p>
-</section>
-
-<div class="pagination" style="text-align: center; padding: 2rem;">
+<div class="pagination">
     {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="button" aria-label="Go to the previous page">Sebelumnya</a>
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">« Halaman Sebelumnya</a>
     {% endif %}
-    <span>Halaman {{ paginator.page }} dari {{ paginator.total_pages }}</span>
     {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}" class="button" aria-label="Go to the next page">Selanjutnya</a>
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">Halaman Berikutnya »</a>
     {% endif %}
 </div>

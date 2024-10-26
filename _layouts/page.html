@@ -2,13 +2,16 @@
 layout: default
 ---
 
-<!-- Bagian utama dari halaman -->
-<section class="page-section" aria-labelledby="page-title">
-  <!-- Judul halaman -->
-  <h1 id="page-title">{{ page.title }}</h1>
-
-  <!-- Konten halaman -->
-  <div class="page-content">
-    {{ content }}
-  </div>
-</section>
+<article class="page" role="document">
+    <header class="page-header">
+        <h1>{{ page.title }}</h1>
+    </header>
+    
+    <div class="page-content">
+        {{ content }}
+    </div>
+    
+    <footer class="page-footer">
+        <p><a href="{{ '/' | relative_url }}">Kembali ke beranda</a></p>
+    </footer>
+</article>

@@ -21,3 +21,5 @@ gem "kramdown" # Untuk pengolahan markdown (biasanya sudah termasuk di Jekyll)
 
 # Pastikan untuk menginstal bundler jika belum
 gem "bundler", "~> 2.0" # Versi bundler, bisa disesuaikan
+gem "sassc-rails"
+

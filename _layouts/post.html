@@ -1,44 +1,115 @@
 ---
 layout: default
-comments: true
 ---
 
-<article class="post">
-  <header class="post-header">
-    <h1>{{ page.title }}</h1> <!-- Judul Post -->
-    <p class="post-meta">
-      <time datetime="{{ page.date | date: "%Y-%m-%d" }}">
-        {{ page.date | date: "%B %d, %Y" }} <!-- Tanggal Post dalam format bulan dan tahun -->
-      </time>
-    </p>
-  </header>
-
-  <div class="markdown-content">
-    {{ content }}
-  </div>
-  
-  <!-- Bagian komentar (opsional) -->
-  <section class="comments" aria-labelledby="comments-title">
-    <h2 id="comments-title">Comments</h2> <!-- Menambahkan ID untuk aksesibilitas -->
-    <div id="disqus_thread"></div>
+<article class="post" role="article">
+    <header class="post-header">
+        <h2>{{ page.title }}</h2>
+        <p class="post-meta">Diposting pada {{ page.date | date: '%B %d, %Y' }} oleh <span class="author">{{ page.author }}</span></p>
+    </header>
     
-    <script>
-      var disqus_config = function () {
-        this.page.url = '{{ page.url | absolute_url }}'; // URL halaman saat ini
-        this.page.identifier = '{{ page.id }}'; // Ganti dengan ID unik untuk halaman
-      };
-
-      (function() { // JANGAN EDIT DI BAWAH GARIS INI
-        var d = document, s = d.createElement('script');
-        s.src = 'https://testing-w2sa9mqj2y.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
+    <div class="markdown">
+        {{ content }}
+    </div>
     
-    <noscript>
-      Please enable JavaScript to view the 
-      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
-  </section>
+    <footer class="post-footer">
+        <hr>
+        <p><a href="{{ '/archives/' | relative_url }}" class="back-to-archives">Kembali ke arsip</a></p>
+    </footer>
 </article>
+<style>
+/* Markdown Styles */
+.markdown {
+    margin: 1.5em 0; /* Margin untuk kontainer markdown */
+    line-height: 1.75; /* Keterbacaan yang lebih baik */
+    font-size: 0.95em; /* Ukuran font sedikit lebih besar untuk kenyamanan */
+    color: #333; /* Warna teks gelap untuk kontras */
+}
+
+/* Paragraf */
+.markdown p {
+    margin: 1.25em 0; /* Margin antar paragraf */
+}
+
+/* Heading */
+.markdown h1, 
+.markdown h2, 
+.markdown h3, 
+.markdown h4, 
+.markdown h5, 
+.markdown h6 {
+    margin-top: 1.75em; /* Margin atas yang lebih besar */
+    margin-bottom: 0.5em; /* Margin bawah */
+    color: #222; /* Warna teks gelap untuk kontras */
+    border-bottom: 2px solid #e0e0e0; /* Garis bawah lembut untuk heading */
+    padding-bottom: 0.5em; /* Padding bawah untuk heading */
+    font-weight: bold; /* Berat font lebih tebal untuk heading */
+    font-family: 'Georgia', serif; /* Font serif untuk heading, mirip Wikipedia */
+}
+
+/* Gambar */
+.markdown img {
+    max-width: 100%; /* Responsif */
+    height: auto; /* Mempertahankan rasio aspek */
+    margin: 1em 0; /* Margin atas dan bawah */
+    display: block; /* Memastikan gambar terpisah dari teks */
+    border: 1px solid #e0e0e0; /* Border lembut untuk gambar */
+    border-radius: 4px; /* Sudut membulat untuk gambar */
+}
+
+/* Daftar */
+.markdown ul, 
+.markdown ol {
+    padding-left: 20px; /* Spasi untuk daftar */
+    margin: 1.25em 0; /* Margin antar daftar */
+}
+
+.markdown li {
+    margin-bottom: 0.75em; /* Margin antar item daftar */
+    position: relative; /* Untuk posisi item daftar */
+}
+
+.markdown li::marker {
+    color: #007bff; /* Warna marker untuk daftar */
+}
+
+/* Tautan */
+.markdown a {
+    color: #0645ad; /* Warna tautan seperti Wikipedia */
+    text-decoration: none; /* Tanpa garis bawah */
+}
+
+.markdown a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #0b0080; /* Ubah warna saat hover */
+}
+
+/* Kode inline */
+.markdown code {
+    background-color: #f0f0f0; /* Latar belakang kode */
+    padding: 2px 4px; /* Padding untuk kode */
+    border-radius: 3px; /* Radius sudut */
+    font-family: 'Courier New', Courier, monospace; /* Font monospace */
+}
+
+/* Blok kode */
+.markdown pre {
+    background-color: #f8f8f8; /* Latar belakang blok kode */
+    padding: 10px; /* Padding untuk blok kode */
+    border-radius: 4px; /* Radius sudut */
+    overflow-x: auto; /* Memungkinkan scroll horizontal untuk konten yang lebar */
+    border: 1px solid #e0e0e0; /* Border lembut untuk blok kode */
+    margin: 1.25em 0; /* Margin untuk blok kode */
+}
+
+/* Teks kutipan */
+.markdown blockquote {
+    border-left: 4px solid #007bff; /* Garis samping untuk kutipan */
+    padding-left: 1.25em; /* Padding untuk teks kutipan */
+    color: #555; /* Warna teks kutipan */
+    margin: 1.25em 0; /* Margin untuk kutipan */
+    font-style: italic; /* Italic untuk kutipan */
+    background-color: #f9f9f9; /* Latar belakang kutipan */
+    border-radius: 4px; /* Sudut membulat untuk kutipan */
+}
+</style>

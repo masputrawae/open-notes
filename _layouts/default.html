@@ -1,68 +1,65 @@
-<!-- Untuk default.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>{{ page.title }} - {{ site.title }}</title>
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | relative_url }}">
-  <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | relative_url }}">
-  
-  <link rel="stylesheet" href="{{ '/assets/css/responsive.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ '/assets/stylesheets/main.css' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | relative_url }}">
+    <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | relative_url }}">
 </head>
 <body>
-  <div class="container">
-    <aside class="main-menu">
-      <div class="logo">
-        <a href="{{ '/' | relative_url }}">
-          <img src="{{ '/assets/images/logo.jpeg' | relative_url }}" alt="Logo dari {{ site.title }}">
-        </a>
-      </div>
-      <header class="site-header">
-      </header>
-      <h3>Main Menu</h3>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="{{ '/' | relative_url }}"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="{{ '/articles/' | relative_url }}"><i class="fas fa-file-alt"></i> Articles</a></li>
-          <li><a href="{{ '/categories/' | relative_url }}"><i class="fas fa-th-list"></i> Categories</a></li>
-          <li><a href="{{ '/tags/' | relative_url }}"><i class="fas fa-tags"></i> Tags</a></li>
-          <li><a href="{{ '/archives/' | relative_url }}"><i class="fas fa-archive"></i> Archives</a></li>
-          <li><a href="{{ '/social/' | relative_url }}"><i class="fas fa-users"></i> Social</a></li>
-          <li><a href="{{ '/about/' | relative_url }}"><i class="fas fa-info-circle"></i> About</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <header class="site-header">
+        <div class="logo">
+            <a href="{{ '/' | relative_url }}">
+                <img src="{{ '/assets/images/logo.jpeg' | relative_url }}" alt="Logo dari {{ site.title }}">
+            </a>
+        </div>
+        <div class="search-bar">
+            <form action="{{ '/search.html' | relative_url }}" method="get">
+                <label for="search-box" class="visually-hidden">Cari</label>
+                <input type="text" id="search-box" name="query" required placeholder="Cari...">
+                <button type="submit" aria-label="Submit search">
+                    <i class="fas fa-search"></i>
+                    <span class="visually-hidden">Cari</span>
+                </button>
+            </form>
+        </div>
+    </header>
 
-    <button class="toggle-button" aria-label="Toggle sidebar">
-      <i class="fas fa-bars"></i>
-    </button>
+    <div class="container">
+        <aside class="main-menu">
+            <h3>Main Menu</h3>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{{ '/categories/' | relative_url }}"><i class="fas fa-th-list"></i> Categories</a></li>
+                    <li><a href="{{ '/tags/' | relative_url }}"><i class="fas fa-tags"></i> Tags</a></li>
+                    <li><a href="{{ '/archives/' | relative_url }}"><i class="fas fa-archive"></i> Archives</a></li>
+                    <li><a href="{{ '/social/' | relative_url }}"><i class="fas fa-users"></i> Social</a></li>
+                    <li><a href="{{ '/about/' | relative_url }}"><i class="fas fa-info-circle"></i> About</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <main class="content">
-      <div class="search-bar">
-        <form action="{{ '/search.html' | relative_url }}" method="get">
-          <label for="search-box">Search</label>
-          <input type="text" id="search-box" name="query" required>
-          <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
-        </form>
-      </div>
+        <main class="main-content">
+            <article class="content">
+                {{ content }}
+            </article>
+        </main>
+    </div>
 
-      {{ content }} <!-- Tempat untuk konten halaman/post -->
-    </main>
-  </div>
+    <footer class="site-footer">
+        <nav aria-label="Footer navigation">
+            <p>&copy; {{ site.year }} {{ site.title }} | <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a></p>
+        </nav>
+    </footer>
 
-  <footer class="footer">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-  </footer>
-  
-  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/lunr.min.js' | relative_url }}"></script>
 </body>
 </html>
